@@ -6,10 +6,10 @@ class SearchesController < ApplicationController
     @word = params[:word]
     @search = params[:search]
 
-    if @model == "User"
-      @users = User.looks(@search, @word)
+    if @model == "user"
+      @records = User.looks(@search, @word)
     else
-      @books = Book.looks(@search, @word)
+      @records = Book.looks(@search, @word)
     end
   end
 

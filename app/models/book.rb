@@ -13,13 +13,13 @@ class Book < ApplicationRecord
    #検索機能
   def self.looks(search, word)
     if search == 'parfect'
-      book = Book.where("title Like?", "#{word}")
+      books = Book.where("title Like?", "#{word}")
     elsif search == 'forward'
-      book = Book.where("title Like?", "#{word}%")
+      books = Book.where("title Like?", "#{word}%")
     elsif search == 'backward'
-      book = Book.where("title Like?", "%#{word}")
+      books = Book.where("title Like?", "%#{word}")
     else search == 'partial'
-      book = Book.where("title Like?", "%#{word}%")
+      books = Book.where("title Like?", "%#{word}%")
     end
   end
 
